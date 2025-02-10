@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('birthday_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        .message-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday! 💖</h1>
+        <div class="message-box">
+            <p id="love-message">រីករាយថ្ងៃខួបកំណើតអូនសម្លាញ់ចិត្តបង! ☀️</p>
+            <button onclick="nextMessage()">Click Me</button>
+        </div>
+        <div class="image-container">
+            <img id="birthday-image" src="photo1.jpg" alt="Birthday Celebration">
+        </div>
+    </div>
+
+    <script>
+        const messages = [
+            { text: "Wishing you a day filled with love and joy! 🎈", image: "photo1.jpg" },
+            { text: "May your year be full of happiness and success! 🎊", image: "photo2.jpg" },
+            { text: "Happy Birthday! May all your dreams come true! 🎁", image: "photo3.jpg" },
+            { text: "You are special and loved! Have an amazing birthday! 🎂", image: "photo4.jpg" },
+            { text: "Cheers to another year of happiness and adventure! 🥂", image: "photo5.jpg" },
+            { text: "Sending you love and warm wishes on your special day! ❤️", image: "photo6.jpg" },
+            { text: "Enjoy your birthday to the fullest! 🎉", image: "photo7.jpg" }
+        ];
+
+        let index = 0;
+        function nextMessage() {
+            index = (index + 1) % messages.length;
+            document.getElementById("love-message").innerText = messages[index].text;
+            document.getElementById("birthday-image").src = messages[index].image;
+        }
+    </script>
+</body>
+</html>
